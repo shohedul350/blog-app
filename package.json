@@ -20,8 +20,8 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "engines":{
-    "node":"v12.14.1"
+  "engines": {
+    "node": "v12.14.1"
   },
   "author": "shohedul",
   "license": "ISC"
