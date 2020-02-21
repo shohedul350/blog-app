@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 // import spinner from "../layout/spinner.gif"
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-import Moment from 'react-moment'
+// import Moment from 'react-moment'
 
 const Article=()=> {
 
@@ -13,7 +13,7 @@ const [article,setArticle]=useState([]);
     axios.get('/articles')
     .then(res=>setPosts(res.data))
     .catch(error=>console.log(error));
-  },[])
+  },[posts])
 
 
 
@@ -43,17 +43,17 @@ const [article,setArticle]=useState([]);
                     posts.map((article,key)=>(
                          <div className="card" key={key}>
                              <div className="card-header">
-                             <Link to={{
+                             {/* <Link to={{
                                  pathname:`/article/${article._id}`
-                             }}>
+                             }}> */}
                              
                              <h2>{article.title}</h2>
-                             </Link>
+                             {/* </Link> */}
                              </div>
                              <div className="card-body">
                            
         
-            <Moment><p className="p-4">{article.time}</p></Moment>
+            {/* <Moment><p className="p-4">{article.time}</p></Moment> */}
                            
                              <blockquote className="blockquote mb-0">
                              <p className="text-justify">{article.article}</p>
