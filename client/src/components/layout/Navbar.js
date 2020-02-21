@@ -9,7 +9,7 @@ function Header() {
   <div className="container">
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-5 py-0">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary px-5 py-0">
   <Link to='/' className="navbar-brand">
     <img style={{width:'50px'}} src={Logo} alt='logo'/>
   </Link>

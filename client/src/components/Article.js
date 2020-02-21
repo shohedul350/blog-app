@@ -30,12 +30,12 @@ import Moment from 'react-moment'
     <h2>{title}</h2>
 
     </div>
-    <div class="card-body">
+    <div className="card-body">
   
 
 <Moment><p className="p-4">{article.time}</p></Moment>
   
-    <blockquote class="blockquote mb-0">
+    <blockquote className="blockquote mb-0">
     <p className="text-justify">{article}</p>
     <footer className="badge blockquote-footer"> <cite title="Source Title">{authorname}</cite></footer>
     {/* <span className='badge badge-secondary p-2'></span> */}
