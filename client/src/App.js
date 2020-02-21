@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import Header from './components/layout/Header'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
@@ -22,10 +22,12 @@ function App() {
     <div className="App">
     <Header/>
     <Navbar/>
-  <Route exact path="/" render={()=><Articles posts={posts}/> }/>
-  <Route exact path="/article/:id" render={(props)=><Article{...props} posts={posts}/> }/>
-  <Route exact path="/update/:id" render={(props)=><EditArticl{...props} posts={posts}/> }/>
-    <Route path="/add-article" component={AddArticle}/>
+      <Switch>
+          <Route exact path="/" render={()=><Articles posts={posts}/> }/>
+          <Route exact path="/article/:id" render={(props)=><Article{...props} posts={posts}/> }/>
+          <Route exact path="/update/:id" render={(props)=><EditArticl{...props} posts={posts}/> }/>
+          <Route path="/add-article" component={AddArticle}/>
+      </Switch>
     <Footer/>
     </div>
   );
