@@ -1,13 +1,14 @@
 import React,{useState,useEffect} from 'react'
-import spinner from "../layout/spinner.gif"
+// import spinner from "../layout/spinner.gif"
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import Moment from 'react-moment'
 
 const Article=()=> {
 
+const [posts,setPosts]=useState([]);
+const [article,setArticle]=useState([]);
 
-    const [posts,setPosts]=useState([]);
   useEffect(()=>{
     axios.get('/articles')
     .then(res=>setPosts(res.data))
@@ -16,7 +17,7 @@ const Article=()=> {
 
 
 
-    const [article,setArticle]=useState([])
+   
 
 
 
@@ -24,9 +25,7 @@ const Article=()=> {
     //delete by id
 
     const deleteArticle=id=>{
-        console.log(id)
      axios.delete(`/articles/delete/${id}`)
-
         .then(res=>alert(res.data))
 
             setArticle(article.filter(elem=>elem._id !== id))
@@ -38,9 +37,9 @@ const Article=()=> {
         <div className='container p-3'>
         
                     {
-                    !posts.length ? (
-                    <img src={spinner} alt="loading..."/> 
-                    ): (
+                    // !posts.length ? (
+                    // <img src={spinner} alt="loading..."/> 
+                    // ): (
                     posts.map((article,key)=>(
                          <div className="card" key={key}>
                              <div className="card-header">
@@ -59,7 +58,7 @@ const Article=()=> {
                              <blockquote className="blockquote mb-0">
                              <p className="text-justify">{article.article}</p>
                              <footer className="badge blockquote-footer"> <cite title="Source Title">{article.authorname}</cite></footer>
-                             {/* <span className='badge badge-secondary p-2'></span> */}
+                            
                              </blockquote>
                              <div className='row my-5'>
                                 <div className='col-sm-2 '>
@@ -77,7 +76,7 @@ const Article=()=> {
                             </div>
                     </div>
                 
-                    )))
+                    ))
                   }
 
       </div>
