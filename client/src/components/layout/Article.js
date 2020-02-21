@@ -1,12 +1,26 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import spinner from "../layout/spinner.gif"
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import Moment from 'react-moment'
 
-const Article=({posts})=> {
+const Article=()=> {
+
+
+    const [posts,setPosts]=useState([]);
+  useEffect(()=>{
+    axios.get('/articles')
+    .then(res=>setPosts(res.data))
+    .catch(error=>console.log(error));
+  },[posts])
+
+
 
     const [article,setArticle]=useState([])
+
+
+
+
     //delete by id
 
     const deleteArticle=id=>{
@@ -24,9 +38,9 @@ const Article=({posts})=> {
         <div className='container p-3'>
         
                     {
-                    // !posts.length ? (
-                    // <img src={spinner} alt="loading..."/> 
-                    // ): (
+                    !posts.length ? (
+                    <img src={spinner} alt="loading..."/> 
+                    ): (
                     posts.map((article,key)=>(
                          <div className="card" key={key}>
                              <div className="card-header">
@@ -63,7 +77,7 @@ const Article=({posts})=> {
                             </div>
                     </div>
                 
-                    ))
+                    )))
                   }
 
       </div>
