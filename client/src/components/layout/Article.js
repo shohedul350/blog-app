@@ -48,7 +48,7 @@ const Article=({posts})=> {
                              {/* <span className='badge badge-secondary p-2'></span> */}
                              </blockquote>
                              <div className='row my-5'>
-                                <div className='col-sm-2'>
+                                <div className='col-sm-2 '>
                                     <Link to={`update/${article._id}`} className='btn btn-outline-success'>
                                         Edit Article
                                     </Link>

@@ -24,7 +24,7 @@ function Header() {
         Home<span className="sr-only">(current)</span></Link>
         
       </li>
-      <li className="nav-item">
+      <li className="nav-item active">
         <Link className="nav-link" to='/add-article'>Add Article</Link>
       </li>
     
