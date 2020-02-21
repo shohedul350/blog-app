@@ -18,9 +18,9 @@ function App() {
     <Navbar/>
       <Switch>
           <Route exact path="/" component={Articles}/>
-          <Route exact path="/article/:id" component={Article}/>
+          {/* <Route exact path="/article/:id" component={Article}/>
           <Route exact path="/update/:id" component={EditArticl}/>
-          <Route path="/add-article" component={AddArticle}/>
+          <Route path="/add-article" component={AddArticle}/> */}
       </Switch>
     <Footer/>
     </div>
