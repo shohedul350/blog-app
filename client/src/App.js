@@ -22,12 +22,12 @@ function App() {
     <div className="App">
     <Header/>
     <Navbar/>
-      {/* <Switch>
+      <Switch>
           <Route exact path="/" render={()=><Articles posts={posts}/> }/>
-          <Route exact path="/article/:id" render={(props)=><Article{...props} posts={posts}/> }/>
+          {/* <Route exact path="/article/:id" render={(props)=><Article{...props} posts={posts}/> }/>
           <Route exact path="/update/:id" render={(props)=><EditArticl{...props} posts={posts}/> }/>
-          <Route path="/add-article" component={AddArticle}/>
-      </Switch> */}
+          <Route path="/add-article" component={AddArticle}/> */}
+      </Switch>
     <Footer/>
     </div>
   );
