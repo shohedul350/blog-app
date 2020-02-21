@@ -24,9 +24,9 @@ const Article=({posts})=> {
         <div className='container p-3'>
         
                     {
-                    !posts.length ? (
-                    <img src={spinner} alt="loading..."/> 
-                    ): (
+                    // !posts.length ? (
+                    // <img src={spinner} alt="loading..."/> 
+                    // ): (
                     posts.map((article,key)=>(
                          <div className="card" key={key}>
                              <div className="card-header">
@@ -63,7 +63,7 @@ const Article=({posts})=> {
                             </div>
                     </div>
                 
-                    )))
+                    ))
                   }
 
       </div>
