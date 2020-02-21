@@ -91,12 +91,6 @@ useEffect(() => {
                 required>
                 </textarea>
             </div>
-
-            
-            
-            
-            
-            
             <button className="btn btn-primary my-3 d-block">Update Article</button>
           </form>
         </div>
