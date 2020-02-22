@@ -90,13 +90,20 @@
 import React,{useState,useEffect} from 'react'
 // import spinner from "../layout/spinner.gif"
 import {Link} from 'react-router-dom'
+import Axios from 'axios';
 
 import Moment from 'react-moment'
 
 const Article=()=> {
 
+ const [posts,setPosts]=useState([]);
+ const [article,setArticle]=useState([]);
 
-
+  useEffect(()=>{
+    Axios.get('/articles')
+    .then(res=>setPosts(res.data))
+    .catch(error=>console.log(error));
+  },[posts])
 
    
 
@@ -111,7 +118,9 @@ const Article=()=> {
         <div className='container p-3'>
         
                     
-                  
+                    { posts.map((article,key)=>(
+
+                   
                    
                          <div className="card" >
                              <div className="card-header">
@@ -119,7 +128,7 @@ const Article=()=> {
                                  pathname:`/article/`
                              }}>
                              
-                             <h2>mern stack</h2>
+                            <h2>{article.title}</h2>
                              </Link>
                              </div>
                              <div className="card-body">
@@ -128,8 +137,8 @@ const Article=()=> {
             <Moment><p className="p-4">12:00</p></Moment>
                            
                              <blockquote className="blockquote mb-0">
-                             <p className="text-justify">this is article</p>
-                             <footer className="badge blockquote-footer"> <cite title="Source Title">emon</cite></footer>
+                            <p className="text-justify">{article.article}</p>
+                             <footer className="badge blockquote-footer"> <cite title="Source Title">{article.authorname}</cite></footer>
                             
                              </blockquote>
                              <div className='row my-5'>
@@ -148,7 +157,7 @@ const Article=()=> {
                             </div>
                     </div>
                 
-                    
+                    ))}
                   
 
       </div>
